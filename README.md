@@ -9,6 +9,15 @@ waitforgraph dbname=DATABASENAME | dot -T svg > wfg.svg
 open wfg.svg
 ```
 
+```bash
+waitforgraph > wfg.dot
+# Sometimes we are only interested in one subgraph of the graph.
+# And 2018128 is the start point of subgraph.
+grep -F -- '->' wft.dot | subgraph 20181218 > wfg.subgraph.dot
+dot -T svg < wfg.subgraph.dot > wfg.subgraph.svg
+open wfg.subgraph.svg
+```
+
 The locks wait-for graph looks as follow:
 
 ![gdd.dot](https://raw.githubusercontent.com/hidva/waitforgraph/master/assets/wfg.svg)

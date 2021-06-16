@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 postgres = "0.17.5"
 semver = "0.10.0"
+anyhow = "1.0"
